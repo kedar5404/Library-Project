@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap/css.css" />
+    <link rel="stylesheet" href="css/bootstrap/js.js" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+      <a class="navbar-brand" href="#">Patil's Library</a>
+      <div class="ms-auto dropdown">
+        <a
+          class="nav-link dropdown-toggle text-white"
+          href="#"
+          data-bs-toggle="dropdown"
+        >
+          <i class="fa fa-user"></i> Admin
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a href="admin.html"><i class="fa-solid fa-book-sparkles"></i></a>
+        <a class="navbar-brand" href="#">Patil's Library</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"
+                >Home
+                <span class="visually-hidden">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Help</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Dropdown</a
+              >
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-sm-2"
+              type="search"
+              placeholder="Search"
+            />
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <div
+        class="bg-dark text-white sidebar p-3"
+        style="width: 250px; min-height: 100vh"
+      >
+        <h5 class="text-white mb-3">Navigation</h5>
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('dashboard.html')"
+            >
+              <i class="fa fa-chart-line me-2"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('resources.html')"
+            >
+              <i class="fa fa-book-open me-2"></i> Resources
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('manage-books.html')"
+            >
+              <i class="fa fa-book me-2"></i> Manage Books
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('reports.html')"
+            >
+              <i class="fa fa-chart-pie me-2"></i> Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('lended-books.html')"
+            >
+              <i class="fa fa-share-square me-2"></i> Lended Books
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('members.html')"
+            >
+              <i class="fa fa-users me-2"></i> Members
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white dropdown-toggle"
+              data-bs-toggle="collapse"
+              href="#settingsMenu"
+            >
+              <i class="fa fa-cog me-2"></i> Settings
+            </a>
+            <div class="collapse" id="settingsMenu">
+              <ul class="nav flex-column ms-3">
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onclick="loadPage('profile-settings.html')"
+                    >Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="nav-link text-white"
+                    onclick="loadPage('preferences.html')"
+                    >Preferences</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a
+              href="#"
+              class="nav-link text-white"
+              onclick="loadPage('notifications.html')"
+            >
+              <i class="fa fa-bell me-2"></i> Notifications
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" onclick="logout()">
+              <i class="fa fa-sign-out-alt me-2"></i> Log Out
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Main Content -->
+      <div class="p-4" style="flex: 1" id="main-content">
+        <h2>Welcome to Admin Dashboard</h2>
+        <div class="row">
+          <div class="col-sm-12 col-md-6 my-4">
+            <div class="card border-primary" style="max-width: 100%">
+              <!-- <div class="card border-primary mb-3" style="max-width: 20rem"> -->
+              <div class="card-header">Library Inventory</div>
+              <div class="card-body">
+                <h4 class="card-title">📚 Total Books</h4>
+                <p class="card-text">1,240 books available</p>
+                <a href="#" class="btn btn-primary"> View Details </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm-12 col-md-6 my-4">
+            <div class="card border-primary" style="max-width: 100%">
+              <div class="card-header">Currently Borrowed</div>
+              <div class="card-body">
+                <h4 class="card-title">📖 Books Issued</h4>
+                <p class="card-text">325 books currently borrowed</p>
+                <a href="pages/book-issued.html" class="btn btn-primary">
+                  View Details
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 my-4">
+            <div class="card border-primary" style="max-width: 100%">
+              <div class="card-header">Membership</div>
+              <div class="card-body">
+                <h4 class="card-title">👥 Registered Members</h4>
+                <p class="card-text">880 active members</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 my-4">
+            <div class="card border-primary" style="max-width: 100%">
+              <div class="card-header">Alerts</div>
+              <div class="card-body">
+                <h4 class="card-title">⏰ Overdue Returns</h4>
+                <p class="card-text">15 books overdue</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+      &copy; 2025 Admin Dashboard. All rights reserved.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,582 @@
+{
+  "Users": [
+    {
+      "UserID": 1,
+      "Name": "Alice Smith",
+      "Email": "alice@example.com",
+      "Password": "pass123",
+      "Phone": "9876543210",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 2,
+      "Name": "Bob Johnson",
+      "Email": "bob@example.com",
+      "Password": "pass456",
+      "Phone": "9123456780",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 3,
+      "Name": "Charlie Brown",
+      "Email": "charlie@example.com",
+      "Password": "pass789",
+      "Phone": "9898989898",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 4,
+      "Name": "Diana King",
+      "Email": "diana@example.com",
+      "Password": "pass321",
+      "Phone": "9001122334",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 5,
+      "Name": "Ethan Hunt",
+      "Email": "ethan@example.com",
+      "Password": "pass555",
+      "Phone": "8000000000",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 6,
+      "Name": "Fiona Adams",
+      "Email": "fiona@example.com",
+      "Password": "pass666",
+      "Phone": "8999999999",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 7,
+      "Name": "George Clark",
+      "Email": "george@example.com",
+      "Password": "pass777",
+      "Phone": "8112233445",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 8,
+      "Name": "Hannah Davis",
+      "Email": "hannah@example.com",
+      "Password": "pass888",
+      "Phone": "8223344556",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 9,
+      "Name": "Ian Wright",
+      "Email": "ian@example.com",
+      "Password": "pass999",
+      "Phone": "8334455667",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 10,
+      "Name": "Jane Doe",
+      "Email": "jane@example.com",
+      "Password": "pass000",
+      "Phone": "8445566778",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 11,
+      "Name": "Kevin Lewis",
+      "Email": "kevin@example.com",
+      "Password": "pass111",
+      "Phone": "8556677889",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 12,
+      "Name": "Laura Hill",
+      "Email": "laura@example.com",
+      "Password": "pass222",
+      "Phone": "8667788990",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 13,
+      "Name": "Mike Ross",
+      "Email": "mike@example.com",
+      "Password": "pass333",
+      "Phone": "8778899001",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 14,
+      "Name": "Nina Young",
+      "Email": "nina@example.com",
+      "Password": "pass444",
+      "Phone": "8889900112",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 15,
+      "Name": "Oscar Reed",
+      "Email": "oscar@example.com",
+      "Password": "pass555",
+      "Phone": "8991011121",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 16,
+      "Name": "Paula Green",
+      "Email": "paula@example.com",
+      "Password": "pass666",
+      "Phone": "9001122334",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 17,
+      "Name": "Quentin Hall",
+      "Email": "quentin@example.com",
+      "Password": "pass777",
+      "Phone": "9112233445",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 18,
+      "Name": "Rachel Moore",
+      "Email": "rachel@example.com",
+      "Password": "pass888",
+      "Phone": "9223344556",
+      "UserType": "Student"
+    },
+    {
+      "UserID": 19,
+      "Name": "Steve King",
+      "Email": "steve@example.com",
+      "Password": "pass999",
+      "Phone": "9334455667",
+      "UserType": "Faculty"
+    },
+    {
+      "UserID": 20,
+      "Name": "Tina White",
+      "Email": "tina@example.com",
+      "Password": "pass000",
+      "Phone": "9445566778",
+      "UserType": "Student"
+    }
+  ],
+  "Authors": [
+    {
+      "AuthorID": 1,
+      "Name": "J.K. Rowling",
+      "Bio": "British author known for the Harry Potter series."
+    },
+    {
+      "AuthorID": 2,
+      "Name": "George R.R. Martin",
+      "Bio": "Author of A Song of Ice and Fire."
+    },
+    {
+      "AuthorID": 3,
+      "Name": "Agatha Christie",
+      "Bio": "Famous for detective novels."
+    },
+    {
+      "AuthorID": 4,
+      "Name": "Dan Brown",
+      "Bio": "Known for The Da Vinci Code."
+    },
+    {
+      "AuthorID": 5,
+      "Name": "J.R.R. Tolkien",
+      "Bio": "Author of The Lord of the Rings."
+    },
+    {
+      "AuthorID": 6,
+      "Name": "Stephen King",
+      "Bio": "Famous for horror and thriller novels."
+    },
+    {
+      "AuthorID": 7,
+      "Name": "Paulo Coelho",
+      "Bio": "Known for The Alchemist."
+    },
+    { "AuthorID": 8, "Name": "Mark Twain", "Bio": "Famous American writer." },
+    {
+      "AuthorID": 9,
+      "Name": "Ernest Hemingway",
+      "Bio": "Nobel Prize-winning author."
+    },
+    {
+      "AuthorID": 10,
+      "Name": "Jane Austen",
+      "Bio": "Known for Pride and Prejudice."
+    },
+    {
+      "AuthorID": 11,
+      "Name": "C.S. Lewis",
+      "Bio": "Author of The Chronicles of Narnia."
+    },
+    {
+      "AuthorID": 12,
+      "Name": "Isaac Asimov",
+      "Bio": "Famous science fiction writer."
+    },
+    {
+      "AuthorID": 13,
+      "Name": "Suzanne Collins",
+      "Bio": "Author of The Hunger Games."
+    },
+    {
+      "AuthorID": 14,
+      "Name": "Rick Riordan",
+      "Bio": "Known for Percy Jackson series."
+    },
+    {
+      "AuthorID": 15,
+      "Name": "Harper Lee",
+      "Bio": "Author of To Kill a Mockingbird."
+    },
+    {
+      "AuthorID": 16,
+      "Name": "Arthur Conan Doyle",
+      "Bio": "Creator of Sherlock Holmes."
+    },
+    { "AuthorID": 17, "Name": "Leo Tolstoy", "Bio": "Russian novelist." },
+    {
+      "AuthorID": 18,
+      "Name": "Charles Dickens",
+      "Bio": "Victorian era novelist."
+    },
+    {
+      "AuthorID": 19,
+      "Name": "Khaled Hosseini",
+      "Bio": "Author of The Kite Runner."
+    },
+    {
+      "AuthorID": 20,
+      "Name": "Emily Brontë",
+      "Bio": "Known for Wuthering Heights."
+    }
+  ],
+  "Books": [
+    {
+      "BookID": 1,
+      "Title": "Harry Potter",
+      "AuthorID": 1,
+      "Genre": "Fantasy",
+      "TotalCopies": 10,
+      "AvailableCopies": 5
+    },
+    {
+      "BookID": 2,
+      "Title": "Game of Thrones",
+      "AuthorID": 2,
+      "Genre": "Fantasy",
+      "TotalCopies": 7,
+      "AvailableCopies": 3
+    },
+    {
+      "BookID": 3,
+      "Title": "Murder on the Orient Express",
+      "AuthorID": 3,
+      "Genre": "Mystery",
+      "TotalCopies": 8,
+      "AvailableCopies": 2
+    },
+    {
+      "BookID": 4,
+      "Title": "The Da Vinci Code",
+      "AuthorID": 4,
+      "Genre": "Thriller",
+      "TotalCopies": 6,
+      "AvailableCopies": 1
+    },
+    {
+      "BookID": 5,
+      "Title": "The Hobbit",
+      "AuthorID": 5,
+      "Genre": "Fantasy",
+      "TotalCopies": 12,
+      "AvailableCopies": 6
+    },
+    {
+      "BookID": 6,
+      "Title": "It",
+      "AuthorID": 6,
+      "Genre": "Horror",
+      "TotalCopies": 5,
+      "AvailableCopies": 0
+    },
+    {
+      "BookID": 7,
+      "Title": "The Alchemist",
+      "AuthorID": 7,
+      "Genre": "Philosophical",
+      "TotalCopies": 9,
+      "AvailableCopies": 4
+    },
+    {
+      "BookID": 8,
+      "Title": "Adventures of Tom Sawyer",
+      "AuthorID": 8,
+      "Genre": "Adventure",
+      "TotalCopies": 7,
+      "AvailableCopies": 5
+    },
+    {
+      "BookID": 9,
+      "Title": "The Old Man and the Sea",
+      "AuthorID": 9,
+      "Genre": "Classic",
+      "TotalCopies": 6,
+      "AvailableCopies": 3
+    },
+    {
+      "BookID": 10,
+      "Title": "Pride and Prejudice",
+      "AuthorID": 10,
+      "Genre": "Romance",
+      "TotalCopies": 10,
+      "AvailableCopies": 7
+    },
+    {
+      "BookID": 11,
+      "Title": "The Lion, the Witch and the Wardrobe",
+      "AuthorID": 11,
+      "Genre": "Fantasy",
+      "TotalCopies": 8,
+      "AvailableCopies": 2
+    },
+    {
+      "BookID": 12,
+      "Title": "Foundation",
+      "AuthorID": 12,
+      "Genre": "Sci-Fi",
+      "TotalCopies": 5,
+      "AvailableCopies": 1
+    },
+    {
+      "BookID": 13,
+      "Title": "The Hunger Games",
+      "AuthorID": 13,
+      "Genre": "Dystopian",
+      "TotalCopies": 9,
+      "AvailableCopies": 3
+    },
+    {
+      "BookID": 14,
+      "Title": "Percy Jackson",
+      "AuthorID": 14,
+      "Genre": "Fantasy",
+      "TotalCopies": 11,
+      "AvailableCopies": 6
+    },
+    {
+      "BookID": 15,
+      "Title": "To Kill a Mockingbird",
+      "AuthorID": 15,
+      "Genre": "Classic",
+      "TotalCopies": 7,
+      "AvailableCopies": 2
+    },
+    {
+      "BookID": 16,
+      "Title": "Sherlock Holmes",
+      "AuthorID": 16,
+      "Genre": "Mystery",
+      "TotalCopies": 10,
+      "AvailableCopies": 5
+    },
+    {
+      "BookID": 17,
+      "Title": "War and Peace",
+      "AuthorID": 17,
+      "Genre": "Historical",
+      "TotalCopies": 4,
+      "AvailableCopies": 2
+    },
+    {
+      "BookID": 18,
+      "Title": "Oliver Twist",
+      "AuthorID": 18,
+      "Genre": "Classic",
+      "TotalCopies": 6,
+      "AvailableCopies": 3
+    },
+    {
+      "BookID": 19,
+      "Title": "The Kite Runner",
+      "AuthorID": 19,
+      "Genre": "Drama",
+      "TotalCopies": 5,
+      "AvailableCopies": 2
+    },
+    {
+      "BookID": 20,
+      "Title": "Wuthering Heights",
+      "AuthorID": 20,
+      "Genre": "Romance",
+      "TotalCopies": 6,
+      "AvailableCopies": 4
+    }
+  ],
+  "BorrowRecords": [
+    {
+      "RecordID": 1,
+      "UserID": 1,
+      "BookID": 3,
+      "BorrowDate": "2025-03-01",
+      "ReturnDate": "2025-03-10",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 2,
+      "UserID": 2,
+      "BookID": 1,
+      "BorrowDate": "2025-03-02",
+      "ReturnDate": "2025-03-12",
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 3,
+      "UserID": 3,
+      "BookID": 5,
+      "BorrowDate": "2025-03-03",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 4,
+      "UserID": 4,
+      "BookID": 8,
+      "BorrowDate": "2025-03-04",
+      "ReturnDate": "2025-03-14",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 5,
+      "UserID": 5,
+      "BookID": 2,
+      "BorrowDate": "2025-03-05",
+      "ReturnDate": null,
+      "Status": "Overdue"
+    },
+    {
+      "RecordID": 6,
+      "UserID": 6,
+      "BookID": 7,
+      "BorrowDate": "2025-03-06",
+      "ReturnDate": "2025-03-16",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 7,
+      "UserID": 7,
+      "BookID": 11,
+      "BorrowDate": "2025-03-07",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 8,
+      "UserID": 8,
+      "BookID": 12,
+      "BorrowDate": "2025-03-08",
+      "ReturnDate": "2025-03-18",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 9,
+      "UserID": 9,
+      "BookID": 13,
+      "BorrowDate": "2025-03-09",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 10,
+      "UserID": 10,
+      "BookID": 14,
+      "BorrowDate": "2025-03-10",
+      "ReturnDate": "2025-03-20",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 11,
+      "UserID": 11,
+      "BookID": 15,
+      "BorrowDate": "2025-03-11",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 12,
+      "UserID": 12,
+      "BookID": 16,
+      "BorrowDate": "2025-03-12",
+      "ReturnDate": "2025-03-22",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 13,
+      "UserID": 13,
+      "BookID": 17,
+      "BorrowDate": "2025-03-13",
+      "ReturnDate": null,
+      "Status": "Overdue"
+    },
+    {
+      "RecordID": 14,
+      "UserID": 14,
+      "BookID": 18,
+      "BorrowDate": "2025-03-14",
+      "ReturnDate": "2025-03-24",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 15,
+      "UserID": 15,
+      "BookID": 19,
+      "BorrowDate": "2025-03-15",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 16,
+      "UserID": 16,
+      "BookID": 20,
+      "BorrowDate": "2025-03-16",
+      "ReturnDate": "2025-03-26",
+      "Status": "Returned"
+    },
+    {
+      "RecordID": 17,
+      "UserID": 17,
+      "BookID": 4,
+      "BorrowDate": "2025-03-17",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 18,
+      "UserID": 18,
+      "BookID": 9,
+      "BorrowDate": "2025-03-18",
+      "ReturnDate": null,
+      "Status": "Borrowed"
+    },
+    {
+      "RecordID": 19,
+      "UserID": 19,
+      "BookID": 6,
+      "BorrowDate": "2025-03-19",
+      "ReturnDate": null,
+      "Status": "Overdue"
+    },
+    {
+      "RecordID": 20,
+      "UserID": 20,
+      "BookID": 10,
+      "BorrowDate": "2025-03-20",
+      "ReturnDate": "2025-03-30",
+      "Status": "Returned"
+    }
+  ]
+}

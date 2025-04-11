@@ -19,27 +19,16 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      <a class="navbar-brand" href="#">Patil's Library</a>
-      <div class="ms-auto dropdown">
-        <a
-          class="nav-link dropdown-toggle text-white"
-          href="#"
-          data-bs-toggle="dropdown"
-        >
-          <i class="fa fa-user"></i> Admin
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end">
-          <li><a class="dropdown-item" href="#">Profile</a></li>
-          <li><a class="dropdown-item" href="#">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a href="admin.html"><i class="fa-solid fa-book-sparkles"></i></a>
+        <!-- <a href="#"><i class="fa-solid fa-book-sparkles"></i></a> -->
+        <a href="admin.html" class="text-white fs-4 me-2">
+          <i class="fa-solid fa-book"></i>
+        </a>
+
         <a class="navbar-brand" href="#">Patil's Library</a>
-        <button
+
+        <!-- <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -50,147 +39,84 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#"
-                >Home
-                <span class="visually-hidden">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Help</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                data-bs-toggle="dropdown"
-                href="#"
-                role="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                >Dropdown</a
-              >
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-              </div>
-            </li>
-          </ul>
-          <form class="d-flex">
+        <div class="collapse navbar-collapse" id="navbarColor01"> -->
+         
+         
+            <!-- <ul class="navbar-nav me-auto"></ul> -->
+          <form class="d-flex ms-auto">
             <input
               class="form-control me-sm-2"
               type="search"
               placeholder="Search"
             />
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
-              Search
-            </button>
+            <div class="ms-auto dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                data-bs-toggle="dropdown"
+              >
+                <i class="fa fa-user"></i> Admin
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+              </ul>
+            </div>
+
+            <a href="#" class="nav-link text-white ms-3">
+              <i class="fa fa-shopping-cart"></i> 
+            </a>
+            
+
           </form>
         </div>
       </div>
     </nav>
-
     <div class="d-flex">
       <!-- Sidebar -->
-      <div
-        class="bg-dark text-white sidebar p-3"
-        style="width: 250px; min-height: 100vh"
-      >
+      <div class="bg-dark text-white sidebar p-3" style="width: 250px; min-height: 100vh">
         <h5 class="text-white mb-3">Navigation</h5>
         <ul class="nav flex-column">
+          
           <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link text-white"
-              onclick="loadPage('dashboard.html')"
-            >
-              <i class="fa fa-chart-line me-2"></i> Dashboard
+            <a class="nav-link text-white dropdown-toggle" data-bs-toggle="collapse" href="#profileMenu">
+              <i class="fa fa-user me-2"></i> Profile
             </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link text-white"
-              onclick="loadPage('resources.html')"
-            >
-              <i class="fa fa-book-open me-2"></i> Resources
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link text-white"
-              onclick="loadPage('manage-books.html')"
-            >
-              <i class="fa fa-book me-2"></i> Manage Books
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link text-white"
-              onclick="loadPage('reports.html')"
-            >
-              <i class="fa fa-chart-pie me-2"></i> Reports
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link text-white"
-              onclick="loadPage('lended-books.html')"
-            >
-              <i class="fa fa-share-square me-2"></i> Lended Books
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              href="#"
-              class="nav-link text-white"
-              onclick="loadPage('members.html')"
-            >
-              <i class="fa fa-users me-2"></i> Members
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link text-white dropdown-toggle"
-              data-bs-toggle="collapse"
-              href="#settingsMenu"
-            >
-              <i class="fa fa-cog me-2"></i> Settings
-            </a>
-            <div class="collapse" id="settingsMenu">
+            <div class="collapse" id="profileMenu">
               <ul class="nav flex-column ms-3">
                 <li>
-                  <a
-                    href="#"
-                    class="nav-link text-white"
-                    onclick="loadPage('profile-settings.html')"
-                    >Profile</a
-                  >
+                  <a href="#" class="nav-link text-white" onclick="loadPage('profile-settings.html')">Profile Settings</a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    class="nav-link text-white"
-                    onclick="loadPage('preferences.html')"
-                    >Preferences</a
-                  >
+                  <a href="#" class="nav-link text-white" onclick="loadPage('preferences.html')">Preferences</a>
                 </li>
               </ul>
             </div>
           </li>
+      
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" onclick="loadPage('return.html')">
+              <i class="fa fa-undo me-2"></i> Return
+            </a>
+          </li>
+      
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" onclick="loadPage('history.html')">
+              <i class="fa fa-history me-2"></i> History
+            </a>
+          </li>
+      
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" onclick="loadPage('contact.html')">
+              <i class="fa fa-envelope me-2"></i> Contact
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" onclick="loadPage('help.html')">
+              <i class="fa fa-question-circle me-2"></i> Help
+            </a>
+          </li>
+
           <li class="nav-item">
             <a
               href="#"
@@ -200,6 +126,7 @@
               <i class="fa fa-bell me-2"></i> Notifications
             </a>
           </li>
+      
           <li class="nav-item">
             <a href="#" class="nav-link text-white" onclick="logout()">
               <i class="fa fa-sign-out-alt me-2"></i> Log Out
@@ -207,6 +134,7 @@
           </li>
         </ul>
       </div>
+      
 
       <!-- Main Content -->
       <div class="p-4" style="flex: 1" id="main-content">
@@ -220,6 +148,7 @@
                 <h4 class="card-title">📚 Total Books</h4>
                 <p class="card-text">1,240 books available</p>
                 <a href="#" class="btn btn-primary"> View Details </a>
+                <a href="#" class="btn btn-primary"> Add Book </a>
               </div>
             </div>
           </div>

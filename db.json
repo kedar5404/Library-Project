@@ -2,163 +2,143 @@
   "Users": [
     {
       "UserID": 1,
-      "Name": "Alice Smith",
-      "Email": "alice@example.com",
+      "Username": "alice@example.com",
       "Password": "pass123",
       "Phone": "9876543210",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 2,
-      "Name": "Bob Johnson",
-      "Email": "bob@example.com",
+      "Username": "bob@example.com",
       "Password": "pass456",
       "Phone": "9123456780",
-      "UserType": "Faculty"
+      "UserType": "Admin"
     },
     {
       "UserID": 3,
-      "Name": "Charlie Brown",
-      "Email": "charlie@example.com",
+      "Username": "charlie@example.com",
       "Password": "pass789",
       "Phone": "9898989898",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 4,
-      "Name": "Diana King",
-      "Email": "diana@example.com",
+      "Username": "diana@example.com",
       "Password": "pass321",
       "Phone": "9001122334",
-      "UserType": "Faculty"
+      "UserType": "User"
     },
     {
       "UserID": 5,
-      "Name": "Ethan Hunt",
-      "Email": "ethan@example.com",
+      "Username": "ethan@example.com",
       "Password": "pass555",
       "Phone": "8000000000",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 6,
-      "Name": "Fiona Adams",
-      "Email": "fiona@example.com",
+      "Username": "fiona@example.com",
       "Password": "pass666",
       "Phone": "8999999999",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 7,
-      "Name": "George Clark",
-      "Email": "george@example.com",
+      "Username": "george@example.com",
       "Password": "pass777",
       "Phone": "8112233445",
-      "UserType": "Faculty"
+      "UserType": "Admin"
     },
     {
       "UserID": 8,
-      "Name": "Hannah Davis",
-      "Email": "hannah@example.com",
+      "Username": "hannah@example.com",
       "Password": "pass888",
       "Phone": "8223344556",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 9,
-      "Name": "Ian Wright",
-      "Email": "ian@example.com",
+      "Username": "ian@example.com",
       "Password": "pass999",
       "Phone": "8334455667",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 10,
-      "Name": "Jane Doe",
-      "Email": "jane@example.com",
+      "Username": "jane@example.com",
       "Password": "pass000",
       "Phone": "8445566778",
-      "UserType": "Faculty"
+      "UserType": "Admin"
     },
     {
       "UserID": 11,
-      "Name": "Kevin Lewis",
-      "Email": "kevin@example.com",
+      "Username": "kevin@example.com",
       "Password": "pass111",
       "Phone": "8556677889",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 12,
-      "Name": "Laura Hill",
-      "Email": "laura@example.com",
+      "Username": "laura@example.com",
       "Password": "pass222",
       "Phone": "8667788990",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 13,
-      "Name": "Mike Ross",
-      "Email": "mike@example.com",
+      "Username": "mike@example.com",
       "Password": "pass333",
       "Phone": "8778899001",
-      "UserType": "Faculty"
+      "UserType": "Admin"
     },
     {
       "UserID": 14,
-      "Name": "Nina Young",
-      "Email": "nina@example.com",
+      "Username": "nina@example.com",
       "Password": "pass444",
       "Phone": "8889900112",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 15,
-      "Name": "Oscar Reed",
-      "Email": "oscar@example.com",
+      "Username": "oscar@example.com",
       "Password": "pass555",
       "Phone": "8991011121",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 16,
-      "Name": "Paula Green",
-      "Email": "paula@example.com",
+      "Username": "paula@example.com",
       "Password": "pass666",
       "Phone": "9001122334",
-      "UserType": "Faculty"
+      "UserType": "User"
     },
     {
       "UserID": 17,
-      "Name": "Quentin Hall",
-      "Email": "quentin@example.com",
+      "Username": "quentin@example.com",
       "Password": "pass777",
       "Phone": "9112233445",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 18,
-      "Name": "Rachel Moore",
-      "Email": "rachel@example.com",
+      "Username": "rachel@example.com",
       "Password": "pass888",
       "Phone": "9223344556",
-      "UserType": "Student"
+      "UserType": "User"
     },
     {
       "UserID": 19,
-      "Name": "Steve King",
-      "Email": "steve@example.com",
+      "Username": "steve@example.com",
       "Password": "pass999",
       "Phone": "9334455667",
-      "UserType": "Faculty"
+      "UserType": "Admin"
     },
     {
       "UserID": 20,
-      "Name": "Tina White",
-      "Email": "tina@example.com",
+      "Username": "tina@example.com",
       "Password": "pass000",
       "Phone": "9445566778",
-      "UserType": "Student"
+      "UserType": "User"
     }
   ],
   "Authors": [

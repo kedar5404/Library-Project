@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Management</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+  </head>
+
+  <body class="p-4">
+    <div class="container">
+      <h2 class="mb-4">Book Master Form</h2>
+      <form id="bookForm" class="row g-3">
+        <input type="hidden" id="bookId" />
+        <div class="col-md-4">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" id="title" class="form-control" />
+          <div class="invalid-feedback">Enter at least 3 characters.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="AuthorID" class="form-label">Author</label>
+          <select id="AuthorID" class="form-select">
+            <option value="">-- Select --</option>
+          </select>
+          <div class="invalid-feedback">Please select an Author.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="genre" class="form-label">Genre</label>
+          <input type="text" id="genre" class="form-control" />
+          <div class="invalid-feedback">Enter at least 3 characters.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="copies" class="form-label">Total Copies</label>
+          <input type="number" id="copies" class="form-control" />
+          <div class="invalid-feedback">Enter valid Total Copies.</div>
+        </div>
+        <div class="col-md-4">
+          <label for="available" class="form-label">Available Copies</label>
+          <input type="number" id="available" class="form-control" />
+          <div class="invalid-feedback">Select a valid copies.</div>
+        </div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success">Save</button>
+          <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+      </form>
+
+      <hr />
+      <div class="mb-3 row">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="globalSearch"
+            placeholder="Search across all fields..."
+            class="form-control"
+          />
+        </div>
+      </div>
+
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th onclick="sortTable('title')">Title</th>
+            <th onclick="sortTable('author')">Author</th>
+            <th onclick="sortTable('genre')">Genre</th>
+            <th onclick="sortTable('copies')">Total Copies</th>
+            <th onclick="sortTable('available')">Available Copies</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookTableBody"></tbody>
+      </table>
+    </div>
+
+    <script src="../js/add-book.js"></script>
+  </body>
+</html>

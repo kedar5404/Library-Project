@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container my-5">
+    <h2 class="mb-4">Login</h2>
+
+    <form id="registerForm" class="mb-4">
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required />
+        <div class="invalid-feedback">At least 5 characters required.</div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required />
+        <div class="invalid-feedback">At least 5 characters required.</div>
+      </div>
+      <button type="submit" class="btn btn-primary" id="loginBtn">Login</button>
+      <a href="pages/Registration.html" class="btn btn-primary">Register</a>
+
+      <div id="error" class="text-danger mt-3"></div>
+    </form>
+    <script src="js/Login.js">
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          verify();
+        });
+
+      function verify() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        fetch("http://localhost:3000/Users")
+          .then((res) => res.json())
+          .then((users) => {
+            console.log(users);
+            const user = users.find(
+              (u) => u.Email === email && u.Password === password
+            );
+            if (user) {
+              sessionStorage.setItem("userId", user.UserID);
+              sessionStorage.setItem("userName", user.Username);
+              sessionStorage.setItem("userType", user.UserType);
+              if (user.userType === "Admin") {
+                window.location.href = "admin.html";
+              } else {
+                window.location.href = "user.html";
+              }
+            } else {
+              document.getElementById("error").textContent =
+                "Invalid email or password.";
+            }
+          })
+          .catch((err) => {
+            console.error("Error fetching users:", err);
+          });
+      }
+
+      function getUserId() {
+        return sessionStorage.getItem("userId");
+      }
+
+      function getUserName() {
+        return sessionStorage.getItem("userName");
+      }
+
+      function getUserType() {
+        return sessionStorage.getItem("userType");
+      }
+
+      function logout() {
+        sessionStorage.clear();
+        sessionStorage.setItem("loggedOut", "true");
+        window.location.href = "Registeration.html";
+      }
+    </script>
+  </body>
+</html>

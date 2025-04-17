@@ -208,6 +208,16 @@
           <p><strong>Mobile:</strong> ${mobile.value}</p>
           <p><strong>User Type:</strong> ${userType}</p>
         `;
+
+          // Optional: show result for 2 seconds before redirecting
+          setTimeout(() => {
+            if (userType === "Administrator") {
+              window.location.href = "../admin.html"; // replace with actual path
+            } else {
+              window.location.href = "../user.html"; // replace with actual path
+            }
+          }, 2000); // 2 second delay
+
           form.reset();
           document
             .querySelectorAll(".form-control")

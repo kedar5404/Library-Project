@@ -16,7 +16,7 @@ document.getElementById("registerForm").addEventListener("submit", function (e) 
           sessionStorage.setItem("userId", user.UserID);
           sessionStorage.setItem("userName", user.Username);
           sessionStorage.setItem("userType", user.UserType);
-          if (user.userType === "Admin") {
+          if (user.UserType === "Admin") {
             window.location.href = "../admin.html";
           } else {
             window.location.href = "../user.html";

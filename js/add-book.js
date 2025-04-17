@@ -13,24 +13,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function addValidationListeners() {
-  ["name", "deptId", "desig", "salary", "doj"].forEach(id => {
+  ["title", "AuthorID", "genre", "copies", "available"].forEach(id => {
     const field = document.getElementById(id);
     field.addEventListener("blur", () => validateField(field));
   });
 }
-
 function validateField(field) {
   const value = field.value.trim();
   let isValid = true;
 
-  if (field.id === "name" || field.id === "desig") {
+  if (field.id === "title" || field.id === "genre") {
     isValid = value.length >= 3;
-  } else if (field.id === "deptId") {
+  } else if (field.id === "AuthorID") {
     isValid = value !== "";
-  } else if (field.id === "salary") {
-    isValid = parseFloat(value) > 0;
-  } else if (field.id === "doj") {
-    isValid = value !== "";
+  } else if (field.id === "copies" || field.id === "available") {
+    isValid = !isNaN(value) && Number(value) >= 0;
   }
 
   if (isValid) {
@@ -43,6 +40,7 @@ function validateField(field) {
 
   return isValid;
 }
+
 
 function loadAuthors() {
   fetch(`${apiUrl}/Authors`)
@@ -87,42 +85,40 @@ function renderTable(data) {
 
 function saveBook(e) {
   e.preventDefault();
-  const empId = document.getElementById("empId").value;
-  const name = document.getElementById("name");
-  const deptId = document.getElementById("deptId");
-  const desig = document.getElementById("desig");
-  const salary = document.getElementById("salary");
-  const doj = document.getElementById("doj");
+  const title = document.getElementById("title").value;
+  const AuthorID = document.getElementById("AuthorID");
+  const genre = document.getElementById("genre");
+  const copies = document.getElementById("copies");
+  const available = document.getElementById("available");
 
-  const valid = [name, deptId, desig, salary, doj].every(validateField);
+  const valid = [title, AuthorID, genre, copies, available].every(validateField);
   if (!valid) return;
 
-  const deptName = departments.find(d => d.deptId == deptId.value)?.deptName || "";
+  // const Name = authors.find(d => d.AuthorID == AuthorID.value)?.Name || "";
   const book = {
-    name: name.value.trim(),
-    dept: deptName,
-    desig: desig.value.trim(),
-    salary: Number(salary.value),
-    doj: doj.value,
-    deptId: Number(deptId.value)
+    Title: title.value.trim(),
+    AuthorID: Number(AuthorID.value),
+    Genre: genre.value.trim(),
+    TotalCopies: Number(copies.value),
+    AvailableCopies: Number(available.value)
   };
 
-  if (empId) {
-    fetch(`${apiUrl}/books/${empId}`, {
+  if (id) {
+    fetch(`${apiUrl}/Books/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(book)
     }).then(loadBooks);
   } else {
-    fetch(`${apiUrl}/books`, {
+    fetch(`${apiUrl}/Books`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(book)
     }).then(loadBooks);
   }
 
-  document.getElementById("empForm").reset();
-  document.getElementById("empId").value = "";
+  document.getElementById("bookForm").reset();
+  document.getElementById("bookId").value = "";
   document.querySelectorAll(".form-control, .form-select").forEach(el => {
     el.classList.remove("is-valid", "is-invalid");
   });
@@ -177,5 +173,6 @@ function searchBooks(e) {
   );
   renderTable(filtered);
 }
+
 
 loadBooks();

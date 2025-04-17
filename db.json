@@ -188,6 +188,33 @@
       "Password": "RadhaKrishna4@",
       "Phone": "8855849591",
       "UserType": "User"
+    },
+    {
+      "id": "600f",
+      "UserID": 22,
+      "Username": "Kedar",
+      "Email": "kedar@5.gmail",
+      "Password": "Kedar5404@",
+      "Phone": "8995849591",
+      "UserType": "Admin"
+    },
+    {
+      "id": "471c",
+      "UserID": 23,
+      "Username": "Hema Patil",
+      "Email": "hema@patil28gmail.com",
+      "Password": "hema28@Patil",
+      "Phone": "9975075627",
+      "UserType": "User"
+    },
+    {
+      "id": "0ef5",
+      "UserID": 24,
+      "Username": "Pramod",
+      "Email": "Pramod@09gmail.com",
+      "Password": "Pramod@09",
+      "Phone": "9067515009",
+      "UserType": "Admin"
     }
   ],
   "Authors": [

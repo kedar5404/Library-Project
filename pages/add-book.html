@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -17,71 +17,272 @@
     <link href="css/bootstrap.css" rel="stylesheet" />
   </head>
 
-  <body class="p-4">
-    <div class="container">
-      <h2 class="mb-4">Book Master Form</h2>
-      <form id="bookForm" class="row g-3">
-        <input type="hidden" id="bookId" />
-        <div class="col-md-4">
-          <label for="title" class="form-label">Title</label>
-          <input type="text" id="title" class="form-control" />
-          <div class="invalid-feedback">Enter at least 3 characters.</div>
-        </div>
-        <div class="col-md-4">
-          <label for="AuthorID" class="form-label">Author</label>
-          <select id="AuthorID" class="form-select">
-            <option value="">-- Select --</option>
-          </select>
-          <div class="invalid-feedback">Please select an Author.</div>
-        </div>
-        <div class="col-md-4">
-          <label for="genre" class="form-label">Genre</label>
-          <input type="text" id="genre" class="form-control" />
-          <div class="invalid-feedback">Enter at least 3 characters.</div>
-        </div>
-        <div class="col-md-4">
-          <label for="copies" class="form-label">Total Copies</label>
-          <input type="number" id="copies" class="form-control" />
-          <div class="invalid-feedback">Enter valid Total Copies.</div>
-        </div>
-        <div class="col-md-4">
-          <label for="available" class="form-label">Available Copies</label>
-          <input type="number" id="available" class="form-control" />
-          <div class="invalid-feedback">Select a valid copies.</div>
-        </div>
-        <div class="col-md-12">
-          <button type="submit" class="btn btn-success">Save</button>
-          <button type="reset" class="btn btn-secondary">Reset</button>
-        </div>
-      </form>
-
-      <hr />
-      <div class="mb-3 row">
-        <div class="col-md-6">
-          <input
-            type="text"
-            id="globalSearch"
-            placeholder="Search across all fields..."
-            class="form-control"
-          />
-        </div>
-      </div>
-
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th onclick="sortTable('title')">Title</th>
-            <th onclick="sortTable('author')">Author</th>
-            <th onclick="sortTable('genre')">Genre</th>
-            <th onclick="sortTable('copies')">Total Copies</th>
-            <th onclick="sortTable('available')">Available Copies</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody id="bookTableBody"></tbody>
-      </table>
+  <body class="p-4"> -->
+<div class="container">
+  <h2 class="mb-4">Book Master Form</h2>
+  <form id="bookForm" class="row g-3">
+    <input type="hidden" id="bookId" />
+    <div class="col-md-4">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" id="title" class="form-control" />
+      <div class="invalid-feedback">Enter at least 3 characters.</div>
     </div>
+    <div class="col-md-4">
+      <label for="AuthorID" class="form-label">Author</label>
+      <select id="AuthorID" class="form-select">
+        <option value="">-- Select --</option>
+      </select>
+      <div class="invalid-feedback">Please select an Author.</div>
+    </div>
+    <div class="col-md-4">
+      <label for="genre" class="form-label">Genre</label>
+      <input type="text" id="genre" class="form-control" />
+      <div class="invalid-feedback">Enter at least 3 characters.</div>
+    </div>
+    <div class="col-md-4">
+      <label for="copies" class="form-label">Total Copies</label>
+      <input type="number" id="copies" class="form-control" />
+      <div class="invalid-feedback">Enter valid Total Copies.</div>
+    </div>
+    <div class="col-md-4">
+      <label for="available" class="form-label">Available Copies</label>
+      <input type="number" id="available" class="form-control" />
+      <div class="invalid-feedback">Select a valid copies.</div>
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-success">Save</button>
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+  </form>
 
-    <script src="../js/add-book.js"></script>
-  </body>
-</html>
+  <hr />
+  <div class="mb-3 row">
+    <div class="col-md-6">
+      <input
+        type="text"
+        id="globalSearch"
+        placeholder="Search across all fields..."
+        class="form-control"
+      />
+    </div>
+  </div>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th onclick="sortTable('title')">Title</th>
+        <th onclick="sortTable('author')">Author</th>
+        <th onclick="sortTable('genre')">Genre</th>
+        <th onclick="sortTable('copies')">Total Copies</th>
+        <th onclick="sortTable('available')">Available Copies</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="bookTableBody"></tbody>
+  </table>
+</div>
+
+<!-- <script src="../js/add-book.js"></script> -->
+<!-- </body>
+</html> -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+
+<script>
+  (() => {
+    //alert("Hello");
+    const apiUrl = "http://localhost:3000";
+    let books = [];
+    let authors = [];
+    let sortOrder = {};
+    //document.getElementById("bookId").value = book.id;
+    let id = document.getElementById("bookId").value;
+    // document.addEventListener("DOMContentLoaded", () => {
+    loadAuthors();
+    loadBooks();
+    document.getElementById("bookForm").addEventListener("submit", saveBook);
+    document
+      .getElementById("globalSearch")
+      .addEventListener("input", searchBooks);
+    addValidationListeners();
+    // });
+
+    function addValidationListeners() {
+      ["title", "AuthorID", "genre", "copies", "available"].forEach((id) => {
+        const field = document.getElementById(id);
+        console.log(field);
+        field.addEventListener("blur", () => validateField(field));
+      });
+    }
+    function validateField(field) {
+      const value = field.value.trim();
+      let isValid = true;
+
+      if (field.id === "title" || field.id === "genre") {
+        isValid = value.length >= 3;
+      } else if (field.id === "AuthorID") {
+        isValid = value !== "";
+      } else if (field.id === "copies" || field.id === "available") {
+        isValid = Number(value) >= 0;
+        isValid = !isNaN(value);
+      }
+
+      if (isValid) {
+        field.classList.remove("is-invalid");
+        field.classList.add("is-valid");
+      } else {
+        field.classList.remove("is-valid");
+        field.classList.add("is-invalid");
+      }
+
+      return isValid;
+    }
+
+    function loadAuthors() {
+      //alert("Loading Authors");
+      fetch(`${apiUrl}/Authors`)
+        .then((res) => res.json())
+        .then((data) => {
+          authors = data;
+          const authorSelect = document.getElementById("AuthorID");
+          data.forEach((au) => {
+            authorSelect.innerHTML += `<option value="${au.AuthorID}">${au.Name}</option>`;
+          });
+        });
+    }
+
+    function loadBooks() {
+      //alert("Loading Books");
+
+      fetch(`${apiUrl}/Books`)
+        .then((res) => res.json())
+        .then((data) => {
+          books = data;
+          renderTable(books);
+        });
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById("bookTableBody");
+      tbody.innerHTML = "";
+      data.forEach((b) => {
+        const Name =
+          authors.find((d) => d.AuthorID == b.AuthorID)?.Name || "N/A";
+        tbody.innerHTML += `
+      <tr>
+        <td>${b.Title}</td>
+        <td>${Name}</td>
+        <td>${b.Genre}</td>
+        <td>${b.TotalCopies}</td>
+        <td>${b.AvailableCopies}</td>
+        <td>
+          <button class="btn btn-sm btn-warning" onclick="editBook(${b.id})"><i class="bi bi-pencil-square"></i></button>
+          <button class="btn btn-sm btn-danger" onclick="deleteBook(${b.id})"> <i class="bi bi-trash"></i></button>
+        </td>
+      </tr>`;
+      });
+    }
+
+    function saveBook(e) {
+      e.preventDefault();
+      const title = document.getElementById("title");
+      const AuthorID = document.getElementById("AuthorID");
+      const genre = document.getElementById("genre");
+      const copies = document.getElementById("copies");
+      const available = document.getElementById("available");
+
+      const valid = [title, AuthorID, genre, copies, available].every(
+        validateField
+      );
+      if (!valid) return;
+
+      // const Name = authors.find(d => d.AuthorID == AuthorID.value)?.Name || "";
+      const book = {
+        Title: title.value.trim(),
+        AuthorID: Number(AuthorID.value),
+        Genre: genre.value.trim(),
+        TotalCopies: Number(copies.value),
+        AvailableCopies: Number(available.value),
+      };
+      const id = document.getElementById("bookId").value;
+      if (id) {
+        fetch(`${apiUrl}/Books/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(book),
+        }).then(loadBooks);
+      } else {
+        fetch(`${apiUrl}/Books`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(book),
+        }).then(loadBooks);
+      }
+
+      document.getElementById("bookForm").reset();
+      document.getElementById("bookId").value = "";
+      document.querySelectorAll(".form-control, .form-select").forEach((el) => {
+        el.classList.remove("is-valid", "is-invalid");
+      });
+    }
+
+    function editBook(id) {
+      const book = books.find((b) => b.id == id);
+      if (!book) return;
+      document.getElementById("bookId").value = book.BookID;
+      document.getElementById("title").value = book.Title;
+      document.getElementById("AuthorID").value = book.AuthorID;
+      document.getElementById("genre").value = book.Genre;
+      document.getElementById("copies").value = book.TotalCopies;
+      document.getElementById("available").value = book.AvailableCopies;
+    }
+
+    function deleteBook(id) {
+      if (confirm("Are you sure you want to delete this Book?")) {
+        fetch(`${apiUrl}/Books/${id}`, { method: "DELETE" }).then(loadBooks);
+      }
+    }
+
+    function sortTable(column) {
+      const order = sortOrder[column] === "asc" ? "desc" : "asc";
+      sortOrder[column] = order;
+
+      const sorted = [...books].sort((a, b) => {
+        let aVal =
+          column === "deptName"
+            ? departments.find((d) => d.deptId == a.deptId)?.deptName || ""
+            : a[column];
+        let bVal =
+          column === "deptName"
+            ? departments.find((d) => d.deptId == b.deptId)?.deptName || ""
+            : b[column];
+
+        if (typeof aVal === "string") {
+          return order === "asc"
+            ? aVal.localeCompare(bVal)
+            : bVal.localeCompare(aVal);
+        } else {
+          return order === "asc" ? aVal - bVal : bVal - aVal;
+        }
+      });
+
+      renderTable(sorted);
+    }
+
+    function searchBooks(e) {
+      const value = e.target.value.toLowerCase();
+      const filtered = books.filter(
+        (book) =>
+          Object.values(book).some((val) =>
+            String(val).toLowerCase().includes(value)
+          ) ||
+          authors
+            .find((d) => d.AuthorID == book.AuthorID)
+            ?.Name.toLowerCase()
+            .includes(value)
+      );
+      renderTable(filtered);
+    }
+
+    // loadBooks();
+  })();
+</script>

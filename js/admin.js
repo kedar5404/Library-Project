@@ -8,6 +8,26 @@ document.getElementById("book-master").addEventListener("click", function (e) {
     loadPage("add-book.html");  // if add-book is inside the "pages" folder
 });
 
+// Go to default
+// window.addEventListener("DOMContentLoaded", () => {
+//     loadPage("dashboard.html"); // or any default page
+// });
+
+// document.getElementById("booksIssued").addEventListener("click", () => {
+//     window.location.href = "./pages/borrow-records.html";
+//   });
+
+  document.getElementById("booksIssued").addEventListener("click", function (e) {
+    e.preventDefault();
+    loadPage("borrowedBooks.html"); // Make sure the HTML file is in the "pages" folder
+  });
+  
+  document.getElementById("view-users").addEventListener("click", function (e) {
+    e.preventDefault();
+    loadPage("view-users.html"); // Make sure the HTML file is in the "pages" folder
+  });
+  
+
 function loadPage(page) {
     fetch(`pages/${page}`)
         .then(response => response.text())

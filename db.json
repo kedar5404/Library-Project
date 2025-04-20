@@ -333,10 +333,22 @@
       "id": "a9dd"
     },
     {
-      "AuthorID": 21,
       "Name": "Shruti Patil",
-      "Bio": "HPResins",
+      "Bio": "HPPResins",
+      "AuthorID": 21,
       "id": "2558"
+    },
+    {
+      "id": "aea1",
+      "Name": "Kedar Patil",
+      "Bio": "Dr. Stone",
+      "AuthorID": 37
+    },
+    {
+      "id": "dd2f",
+      "Name": "Hema Patil",
+      "Bio": "Housewife",
+      "AuthorID": 33
     }
   ],
   "Books": [
@@ -519,6 +531,14 @@
       "TotalCopies": 6,
       "AvailableCopies": 4,
       "id": "aa9e"
+    },
+    {
+      "id": "3329",
+      "Title": "ABC",
+      "AuthorID": 2,
+      "Genre": "Action",
+      "TotalCopies": 4,
+      "AvailableCopies": 2
     }
   ],
   "BorrowRecords": [

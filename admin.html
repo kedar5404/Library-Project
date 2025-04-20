@@ -8,15 +8,17 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      rel="stylesheet"
-    /> -->
 
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
       rel="stylesheet"
     />
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <!-- <link href="css/bootstrap.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
   </head>
@@ -80,10 +82,10 @@
         <ul class="nav flex-column">
           <li class="nav-item">
             <a
-              href="#"
+              href="admin.html"
               data-bs-toggle="dropdown"
               class="nav-link text-white dropdown-toggle"
-              onclick="loadPage('dashboard.html')"
+              
             >
               <i class="fa fa-chart-line me-2"></i> Dashboard
             </a>
@@ -168,7 +170,7 @@
               <div class="card-body">
                 <h4 class="card-title">📖 Books Issued</h4>
                 <p class="card-text">325 books currently borrowed</p>
-                <a href="pages/book-issued.html" class="btn btn-primary">
+                <a href="pages/borrowedBooks.html" id="booksIssued" class="btn btn-primary">
                   View Details
                 </a>
               </div>
@@ -180,7 +182,7 @@
               <div class="card-body">
                 <h4 class="card-title">👥 Registered Members</h4>
                 <p class="card-text">880 active members</p>
-                <a href="#" class="btn btn-primary">View Details</a>
+                <a href="#" class="btn btn-primary" id="view-users">View Details</a>
               </div>
             </div>
           </div>

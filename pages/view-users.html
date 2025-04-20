@@ -1,0 +1,227 @@
+<div class="container mt-4">
+  <h2 class="mb-4">User Master Form</h2>
+  <form id="userForm" class="row g-3">
+    <input type="hidden" id="userId" />
+    <div class="col-md-4">
+      <label class="form-label" for="username">Username</label>
+      <input type="text" id="username" class="form-control" />
+      <div class="invalid-feedback">Enter at least 3 characters.</div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="email">Email</label>
+      <input type="email" id="email" class="form-control" />
+      <div class="invalid-feedback">Enter a valid email.</div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="password">Password</label>
+      <input type="password" id="password" class="form-control" />
+      <div class="invalid-feedback">Enter at least 4 characters.</div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="phone">Phone</label>
+      <input type="text" id="phone" class="form-control" />
+      <div class="invalid-feedback">Enter a 10-digit phone number.</div>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label" for="userType">User Type</label>
+      <select id="userType" class="form-select">
+        <option value="">-- Select --</option>
+        <option value="Admin">Admin</option>
+        <option value="User">User</option>
+      </select>
+      <div class="invalid-feedback">Select a user type.</div>
+    </div>
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-success">Save</button>
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+  </form>
+
+  <hr />
+  <div class="mb-3 row">
+    <div class="col-md-6">
+      <input
+        type="text"
+        id="searchUser"
+        placeholder="Search users..."
+        class="form-control"
+      />
+    </div>
+  </div>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th onclick="sortUserTable('Username')">Username</th>
+        <th onclick="sortUserTable('Email')">Email</th>
+        <th onclick="sortUserTable('Phone')">Phone</th>
+        <th onclick="sortUserTable('UserType')">User Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="userTableBody"></tbody>
+  </table>
+</div>
+
+<script>
+  (() => {
+    const apiUrl = "http://localhost:3000";
+    let users = [];
+    let sortOrder = {};
+
+    loadUsers();
+    document.getElementById("userForm").addEventListener("submit", saveUser);
+    document
+      .getElementById("searchUser")
+      .addEventListener("input", searchUsers);
+    addValidation();
+
+    function addValidation() {
+      ["username", "email", "password", "phone", "userType"].forEach((id) => {
+        const field = document.getElementById(id);
+        field.addEventListener("blur", () => validateField(field));
+      });
+    }
+
+    function validateField(field) {
+      const value = field.value.trim();
+      let valid = true;
+
+      switch (field.id) {
+        case "username":
+          valid = value.length >= 3;
+          break;
+        case "email":
+          valid = /\S+@\S+\.\S+/.test(value);
+          break;
+        case "password":
+          valid = value.length >= 4;
+          break;
+        case "phone":
+          valid = /^\d{10}$/.test(value);
+          break;
+        case "userType":
+          valid = value !== "";
+          break;
+      }
+
+      field.classList.toggle("is-valid", valid);
+      field.classList.toggle("is-invalid", !valid);
+      return valid;
+    }
+
+    function loadUsers() {
+      fetch(`${apiUrl}/Users`)
+        .then((res) => res.json())
+        .then((data) => {
+          users = data;
+          renderUserTable(users);
+        });
+    }
+
+    function renderUserTable(data) {
+      const tbody = document.getElementById("userTableBody");
+      tbody.innerHTML = "";
+      data.forEach((u) => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${u.Username}</td>
+            <td>${u.Email}</td>
+            <td>${u.Phone}</td>
+            <td>${u.UserType}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" onclick="editUser('${u.id}')"><i class="bi bi-pencil-square"></i></button>
+              <button class="btn btn-sm btn-danger" onclick="deleteUser('${u.id}')"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>`;
+      });
+    }
+
+    window.editUser = function (id) {
+      const user = users.find((u) => u.id == id);
+      if (!user) return;
+      document.getElementById("userId").value = user.id;
+      document.getElementById("username").value = user.Username;
+      document.getElementById("email").value = user.Email;
+      document.getElementById("password").value = user.Password;
+      document.getElementById("phone").value = user.Phone;
+      document.getElementById("userType").value = user.UserType;
+    };
+
+    window.deleteUser = function (id) {
+      if (confirm("Are you sure you want to delete this User?")) {
+        fetch(`${apiUrl}/Users/${id}`, { method: "DELETE" }).then(loadUsers);
+      }
+    };
+
+    function saveUser(e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username");
+      const email = document.getElementById("email");
+      const password = document.getElementById("password");
+      const phone = document.getElementById("phone");
+      const userType = document.getElementById("userType");
+
+      const valid = [username, email, password, phone, userType].every(
+        validateField
+      );
+      if (!valid) return;
+
+      const user = {
+        Username: username.value.trim(),
+        Email: email.value.trim(),
+        Password: password.value.trim(),
+        Phone: phone.value.trim(),
+        UserType: userType.value.trim(),
+      };
+
+      const id = document.getElementById("userId").value;
+      const method = id ? "PUT" : "POST";
+      const url = id ? `${apiUrl}/Users/${id}` : `${apiUrl}/Users`;
+
+      fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      }).then(() => {
+        loadUsers();
+        document.getElementById("userForm").reset();
+        document.getElementById("userId").value = "";
+        document
+          .querySelectorAll(".form-control, .form-select")
+          .forEach((el) => {
+            el.classList.remove("is-valid", "is-invalid");
+          });
+      });
+    }
+
+    function searchUsers(e) {
+      const value = e.target.value.toLowerCase();
+      const filtered = users.filter((u) =>
+        Object.values(u).some((v) => String(v).toLowerCase().includes(value))
+      );
+      renderUserTable(filtered);
+    }
+
+    window.sortUserTable = function (column) {
+      const order = sortOrder[column] === "asc" ? "desc" : "asc";
+      sortOrder[column] = order;
+
+      const sorted = [...users].sort((a, b) => {
+        const aVal = a[column];
+        const bVal = b[column];
+
+        if (typeof aVal === "string") {
+          return order === "asc"
+            ? aVal.localeCompare(bVal)
+            : bVal.localeCompare(aVal);
+        } else {
+          return order === "asc" ? aVal - bVal : bVal - aVal;
+        }
+      });
+
+      renderUserTable(sorted);
+    };
+  })();
+</script>

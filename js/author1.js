@@ -145,7 +145,6 @@ form.addEventListener("submit", function (e) {
         Name: authorNameInput.value.trim(),
         Bio: authorDetailsInput.value.trim()
     };
-
     if (editId) {
         // Find original AuthorID from allAuthors using editId
         const existing = allAuthors.find(a => a.id === editId);
@@ -165,8 +164,11 @@ form.addEventListener("submit", function (e) {
             clearValidation();
         });
     } else {
+        //alert("Inside ELSE block - adding new author");
         // Assign new AuthorID while adding
         author.AuthorID = generateUniqueAuthorID();
+        //alert("Generated AuthorID:", author.AuthorID);
+
 
         fetch(apiUrl, {
             method: "POST",
@@ -208,5 +210,11 @@ function validateForm() {
     });
     return isValid;
 }
+function generateUniqueAuthorID() {
+    console.log("generateUniqueAuthorID called");
+    const randomId = Math.floor(Math.random() * 90) + 10; // Generates a number between 10 and 99
+    return randomId;
+}
+
 
 fetchAndRenderAuthors();
